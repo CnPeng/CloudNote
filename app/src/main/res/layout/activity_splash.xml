@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_splash"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:background="#06BBF2"
+        android:gravity="center"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CloudNote"
+            android:textColor="#ffffff"
+            android:textSize="40sp" />
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:paddingTop="20dp"
+            android:src="@drawable/windnote_big" />
+    </LinearLayout>
+
+
+        <TextView
+            android:background="#fff"
+            android:id="@+id/tv_splash"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:padding="20dp"
+            android:text="生命是一条艰险的峡谷,只有勇敢的人才能通过\n\nby米歇潘"
+            android:textColor="#06BBF2"
+            android:textSize="25sp" />
+
+</LinearLayout>

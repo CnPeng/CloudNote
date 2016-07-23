@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="#00BBFF">
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="CloudNote"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <ImageView
+            android:id="@+id/iv_save"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/save" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#fff"
+        android:fadeScrollbars="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/title_bg"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="请输入标题"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                android:lineSpacingExtra="10dp"
+                android:requiresFadingEdge="vertical"
+                android:scrollbars="vertical"
+
+                android:text="无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试无标题记事测试" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+    <!-- <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:layout_alignParentBottom="true"
+         android:background="#00BBFF">
+
+         <ImageView
+             android:id="@+id/iv_settings"
+             android:layout_width="30dp"
+             android:layout_height="30dp"
+             android:layout_centerVertical="true"
+             android:layout_marginLeft="10dp"
+             android:src="@drawable/menu" />
+
+
+         <ImageView
+             android:id="@+id/iv_add"
+             android:layout_width="30dp"
+             android:layout_height="30dp"
+             android:layout_centerInParent="true"
+             android:background="@null"
+             android:src="@drawable/add" />
+
+         <ImageView
+             android:id="@+id/iv_search"
+             android:layout_width="30dp"
+             android:layout_height="30dp"
+             android:layout_alignParentRight="true"
+             android:layout_centerVertical="true"
+             android:layout_marginRight="10dp"
+             android:src="@drawable/search" />
+
+
+     </RelativeLayout>-->
+</LinearLayout>
+
