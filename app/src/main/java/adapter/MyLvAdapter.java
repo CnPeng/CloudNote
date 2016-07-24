@@ -10,15 +10,17 @@ import com.peng.cloudnote.R;
 
 import java.util.List;
 
+import bean.MyNote;
+
 /**
  * Created by Peng on 2016/7/23.
  * 自定义LV的适配器,继承自BaseAdapter
  */
 public class MyLvAdapter extends BaseAdapter {
 
-    List<String> list;
+    List<MyNote> list;
     Context context;
-    public MyLvAdapter(List<String> list, Context context) {
+    public MyLvAdapter(List<MyNote> list, Context context) {
         this.list = list;
         this.context=context;
     }
@@ -52,6 +54,11 @@ public class MyLvAdapter extends BaseAdapter {
             view=convertView;
             holder= (ViewHolder) view.getTag();
         }
+        MyNote note=list.get(position);
+        String title=note.getTitle();
+        String time=note.getTime();
+        holder.tv_title.setText(title);
+        holder.tv_time.setText(time);
 
         return view;
     }

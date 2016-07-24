@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:padding="10dp"
         android:singleLine="true"
-        android:text="1无标题记事无标题记事无标题记事无标题记事"
+        android:hint="请输入标题"
         android:textSize="15sp" />
 
     <TextView

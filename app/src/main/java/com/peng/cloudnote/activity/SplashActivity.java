@@ -14,15 +14,6 @@ public class SplashActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        goToMainActivity();
-
-
-    }
-
-    /**
-     * 三秒后跳转到主页面
-     */
-    private void goToMainActivity() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
