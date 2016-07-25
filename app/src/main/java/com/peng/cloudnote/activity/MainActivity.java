@@ -181,6 +181,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
         startActivity(intent);
         finish();
     }
+
+    /**重写返回键,点击返回键之后,提示是否确认要退出*/
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        builder.setIcon(R.mipmap.ic_launcher);
+        builder.setTitle("您确认要退出程序么?");
+        builder.setItems(new CharSequence[]{"取消", "确定"}, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+              switch (which){
+                  case 0:   //取消就停留在当前页面,可以不做处理
+                      break;
+                  case 1:   //确认就退出界面
+                        finish();
+                    break;
+              }
+            }
+        });
+        builder.show();
+       // super.onBackPressed();
+    }
 }
 
 
