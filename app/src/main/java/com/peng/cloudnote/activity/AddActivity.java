@@ -66,27 +66,43 @@ public class AddActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.iv_back:
                 //返回主界面
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                finish();
+                goBackMain();
                 break;
             case R.id.iv_save:
-                //保存数据到数据库
-                NoteDao dao=new NoteDao(this);
-                String newTitle=et_title.getText().toString().trim();
-                String newContent=et_content.getText().toString();
-                String time= AboutTime.getTime();
-                if(!"UPDATE".equals(modle)) {       //增加新记事
-                    dao.add(newTitle, newContent, time);
-                }else{          //更新已有记事
-                    dao.update(newTitle,newContent,time,_id);
-                }
+                saveNote();
 
                 //返回主界面
-                Intent intent_save = new Intent(this, MainActivity.class);
-                startActivity(intent_save);
-                finish();
+                goBackMain();
                 break;
         }
+    }
+
+    /**自定义方法保存数据到数据库*/
+    private void saveNote() {
+        //保存数据到数据库
+        NoteDao dao=new NoteDao(this);
+        String newTitle=et_title.getText().toString().trim();
+        String newContent=et_content.getText().toString();
+        String time= AboutTime.getTime();
+        if(!"UPDATE".equals(modle)) {       //增加新记事
+            dao.add(newTitle, newContent, time);
+        }else{          //更新已有记事
+            dao.update(newTitle,newContent,time,_id);
+        }
+    }
+
+    /**自定义方法,返回主界面*/
+    private void goBackMain() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    /**重写返回键,在该界面点击返回键,自动保存数据,并返回到main界面*/
+    @Override
+    public void onBackPressed() {
+        saveNote();
+        goBackMain();
+
     }
 }

@@ -2,8 +2,7 @@
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,11 +41,25 @@
                 android:src="@drawable/asc" />
         </RelativeLayout>
 
-        <ListView
-            android:id="@+id/lv_note_content"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"></ListView>
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/lv_note_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                ></ListView>
+
+            <GridView
+                android:id="@+id/gv_note_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:numColumns="2"></GridView>
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -63,7 +76,6 @@
                 android:src="@drawable/menu" />
 
 
-
             <ImageView
                 android:id="@+id/iv_add"
                 android:layout_width="30dp"
@@ -71,6 +83,7 @@
                 android:layout_centerInParent="true"
                 android:background="@null"
                 android:src="@drawable/add" />
+
             <ImageView
                 android:id="@+id/iv_search"
                 android:layout_width="30dp"
