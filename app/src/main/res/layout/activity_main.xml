@@ -95,7 +95,4 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <include layout="@layout/settingslayout" />
-
-
 </FrameLayout>

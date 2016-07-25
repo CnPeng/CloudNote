@@ -35,7 +35,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private List<MyNote> list;
     private LinearLayout ll_setting;
     private MyLvAdapter myLvAdapter;
-    private boolean isListView=true;
+    private boolean isListView = true;
     private GridView gv_content;
 
     @Override
@@ -67,7 +67,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         /**lv设置适配器*/
         myLvAdapter = new MyLvAdapter(list, this);
         lv_content.setAdapter(myLvAdapter);
-        MyGvAdapter myGvAdapter=new MyGvAdapter(list,this);
+        MyGvAdapter myGvAdapter = new MyGvAdapter(list, this);
         gv_content.setAdapter(myGvAdapter);
         /**短按更新*/
         lv_content.setOnItemClickListener(clickListener);
@@ -75,6 +75,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         /**长按更新或删除*/
         lv_content.setOnItemLongClickListener(longClickListener);
+        gv_content.setOnItemLongClickListener(longClickListener);
     }
 
     public void initData() {
@@ -98,20 +99,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.iv_settings:
 //                System.out.println("-----------------设置");
-                ll_setting.setVisibility(View.VISIBLE);
+                showSettings();
                 break;
             case R.id.iv_grid:
 //                System.out.println("-----------------列表模式");
                 if (isListView) {
                     lv_content.setVisibility(View.INVISIBLE);
                     gv_content.setVisibility(View.VISIBLE);
-                    isListView=false;
-                } else{
+                    isListView = false;
+                } else {
                     lv_content.setVisibility(View.VISIBLE);
                     gv_content.setVisibility(View.INVISIBLE);
-                    isListView=true;
+                    isListView = true;
                 }
-
                 break;
             case R.id.iv_sort:
 //                System.out.println("-----------------排序");
@@ -122,13 +122,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
+
     AdapterView.OnItemClickListener clickListener = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             goToAddActivity(position);
         }
     };
-
 
     AdapterView.OnItemLongClickListener longClickListener = new AdapterView.OnItemLongClickListener() {
         @Override
@@ -182,26 +182,38 @@ public class MainActivity extends Activity implements View.OnClickListener {
         finish();
     }
 
-    /**重写返回键,点击返回键之后,提示是否确认要退出*/
+    /**
+     * 重写返回键,点击返回键之后,提示是否确认要退出
+     */
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setIcon(R.mipmap.ic_launcher);
         builder.setTitle("您确认要退出程序么?");
         builder.setItems(new CharSequence[]{"取消", "确定"}, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-              switch (which){
-                  case 0:   //取消就停留在当前页面,可以不做处理
-                      break;
-                  case 1:   //确认就退出界面
+                switch (which) {
+                    case 0:   //取消就停留在当前页面,可以不做处理
+                        break;
+                    case 1:   //确认就退出界面
                         finish();
-                    break;
-              }
+                        break;
+                }
             }
         });
         builder.show();
-       // super.onBackPressed();
+        // super.onBackPressed();
+    }
+
+    /**
+     * 自定义方法,弹窗显示设置界面
+     */
+    private void showSettings() {
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        View settingsView=View.inflate(this,R.layout.iv_settings,null);
+        builder.setView(settingsView);
+        builder.show();
     }
 }
 

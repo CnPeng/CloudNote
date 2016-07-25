@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#606060"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/rl_skin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_skin"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/skin" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_skin"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="皮肤"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_key"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_key"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/key" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_key"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="密码"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_say"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_say"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/say" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_say"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="感悟"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/rl_help"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_help"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/help" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_help"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="帮助"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_about"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_about"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/about" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_about"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="关于"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_exit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_exit"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/exit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_exit"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="5dp"
+                    android:text="退出"
+                    android:textColor="#fff"
+                    android:textSize="25sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
